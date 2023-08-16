@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../config/firebase";
 import { doc, getDoc } from "firebase/firestore";
+import Game from "../components/Game";
 
 function Play() {
   const { postTitle } = useParams();
@@ -18,8 +19,15 @@ function Play() {
 
   return (
     <div>
-      <h1>Hello</h1>
-      {data ? <h1>{`${postTitle}`}</h1> : <h1>Post not found</h1>}
+      {data ? (
+        <Game
+          title={data.title}
+          description={data.description}
+          graphs={data.graphs}
+        />
+      ) : (
+        <h1>Post not found</h1>
+      )}
     </div>
   );
 }

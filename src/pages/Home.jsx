@@ -6,9 +6,7 @@ function Home() {
   const [graph, setGraph] = useState("");
   return (
     <div>
-      <h1>Graph</h1>
-      <input type="text" onChange={(e) => setGraph(e.target.value)} />
-      <Graph func={graph} />
+      <h1>Share graphs with your friends</h1>
     </div>
   );
 }
