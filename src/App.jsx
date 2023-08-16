@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Post from "./pages/Post";
 import Home from "./pages/Home";
+import Play from "./pages/Play";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="post" element={<Post />} />
+          <Route path="/post" element={<Post />} />
+          <Route path="/:postTitle" element={<Play />} />
         </Route>
       </Routes>
     </BrowserRouter>
